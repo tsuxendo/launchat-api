@@ -1,0 +1,25 @@
+version: 0.0
+
+os: linux
+
+files:
+  - source: project
+    destination: /home/ubuntu/project
+    runas: ubuntu
+  - source: configs/gunicorn.service
+    destination: /etc/systemd/system
+    runas: ubuntu
+  - source: configs/gunicorn.socket
+    destination: /etc/systemd/system
+    runas: ubuntu
+  - source: configs/project.conf
+    destination: /etc/nginx/conf.d/
+    runas: ubuntu
+
+hooks:
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      runas: ubuntu
+  AfterInstall:
+    - location: scripts/after_install.sh
+      runas: ubuntu

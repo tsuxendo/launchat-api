@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Before running tests"
+  build:
+    commands:
+      - echo "Running all unit tests"
+  post_build:
+    commands:
+      - echo Build completed on `date`

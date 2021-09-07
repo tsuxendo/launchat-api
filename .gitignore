@@ -1,0 +1,11 @@
+.vscode
+.DS_Store
+__pycache__/
+*.pyc
+.python-version
+.venv/
+.env
+static/
+db.sqlite3
+logs/*
+!logs/.gitkeep
